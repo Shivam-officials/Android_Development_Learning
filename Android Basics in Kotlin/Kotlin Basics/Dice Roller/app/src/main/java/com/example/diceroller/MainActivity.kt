@@ -6,7 +6,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
-// this activity allow the user to roll a dice and view the result on the screen
+/**
+ *  this activity allow the user to roll a dice and view the
+ *  result on the screen
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,17 +19,37 @@ class MainActivity : AppCompatActivity() {
         // onClickLIstener for button to roll dice
         rollButton.setOnClickListener {
             Toast.makeText(this, "Dice rolled ", Toast.LENGTH_SHORT).show()
-
-            val dice = Dice(6)
+            /**
+             * textView1 dice1 updating text with rolling dice
+             */
+            val dice= Dice(6)
             val randomRolledNumber = dice.roll()
 
-           // updating the textview with random rolled number of dice
-            val resultTextView: TextView= findViewById(R.id.textView)
-            resultTextView.text=randomRolledNumber.toString()   //toString bcz TextView used text so converting it to string
+            // updating the textview1 with random rolled number of dice
+            val resultTextView: TextView = findViewById(R.id.textView)
+            resultTextView.text =
+                randomRolledNumber.toString()   //toString bcz TextView used text so converting it to string
+
+
+            /**
+             * textView2 dice2 updating text with rollin dice
+             */
+            val dice2 = Dice(6)
+            val randomRolledNumber2 = dice2.roll()
+
+            // updating the textview2 with random rolled number of dice
+            val resultTextView2: TextView = findViewById(R.id.textView2)
+            resultTextView2.text =
+                randomRolledNumber2.toString()   //toString bcz TextView used text so converting it to string
+
         }
     }
 }
-class Dice( val numsides: Int) {
+
+/**
+ * *lass creating dice with  flexible sides and for rolling the dice
+ */
+class Dice(val numsides: Int) {
 
     fun roll(): Int {
         return (1..numsides).random()
