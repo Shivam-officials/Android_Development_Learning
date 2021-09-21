@@ -12,9 +12,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val rollButton: Button = findViewById(R.id.button2)
         rollButton.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Dice rolled ", Toast.LENGTH_SHORT).show()
+
+            val dice = Dice(6)
+            val randomRolledNumber = dice.roll()
+
+           // updating the textview with random rolled number of dice
             val resultTextView: TextView= findViewById(R.id.textView)
-            resultTextView.text="6"
+            resultTextView.text=randomRolledNumber.toString()   //toString bcz TextView used text so converting it to string
         }
+    }
+}
+class Dice( val numsides: Int) {
+
+    fun roll(): Int {
+        return (1..numsides).random()
     }
 }
