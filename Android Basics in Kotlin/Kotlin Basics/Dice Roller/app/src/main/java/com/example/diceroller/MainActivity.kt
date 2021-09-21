@@ -30,18 +30,6 @@ class MainActivity : AppCompatActivity() {
             resultTextView.text =
                 randomRolledNumber.toString()   //toString bcz TextView used text so converting it to string
 
-
-            /**
-             * textView2 dice2 updating text with rollin dice
-             */
-            val dice2 = Dice(6)
-            val randomRolledNumber2 = dice2.roll()
-
-            // updating the textview2 with random rolled number of dice
-            val resultTextView2: TextView = findViewById(R.id.textView2)
-            resultTextView2.text =
-                randomRolledNumber2.toString()   //toString bcz TextView used text so converting it to string
-
         }
     }
 }
