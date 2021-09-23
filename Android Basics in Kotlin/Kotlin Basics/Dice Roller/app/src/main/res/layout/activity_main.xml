@@ -30,6 +30,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/dice_2" />
+        app:srcCompat="@drawable/dice_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
