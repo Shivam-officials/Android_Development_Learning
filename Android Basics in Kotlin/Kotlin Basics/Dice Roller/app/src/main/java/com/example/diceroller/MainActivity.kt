@@ -15,8 +15,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+<<<<<<< Updated upstream
         //Find the roll Button in the layout
         val rollButton: Button = findViewById(R.id.button2)
+=======
+        // onClickLIstener for button to roll dice
+        rollButton.setOnClickListener {
+            Toast.makeText(this, "Dice rolled ", Toast.LENGTH_SHORT).show()
+            /**
+             * textView1 dice1 updating text with rolling dice
+             */
+            val dice = Dice(6)
+            val randomRolledNumber = dice.roll()
+>>>>>>> Stashed changes
 
         // onClickListener for button to roll dice and imageView
         rollButton.setOnClickListener { rollDice() }
@@ -33,8 +44,18 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6)
         val randomRolledNumber = dice.roll()
 
+<<<<<<< Updated upstream
         //toast for text msg dice rolled at this number
         Toast.makeText(this, "Dice rolled at $randomRolledNumber", Toast.LENGTH_SHORT).show()
+=======
+            // updating the textview2 with random rolled number of dice
+            val resultTextView2: TextView = findViewById(R.id.textView2)
+            resultTextView2.text =
+                randomRolledNumber2.toString()//toString bcz TextView used text so converting it to string
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
         //Determining which dice resource ID is going to be used acc to randomRolledNumber
         val diceImage: ImageView = findViewById(R.id.imageView)
