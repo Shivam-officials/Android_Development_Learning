@@ -42,19 +42,47 @@
             android:id="@+id/option_twenty_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amazing (20%)"/>
+            android:text="@string/amazing_service"/>
 
         <RadioButton
             android:id="@+id/option_eighteen_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Good (18%)"/>
+            android:text="@string/good_service"/>
 
         <RadioButton
             android:id="@+id/option_fifteen_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Okay (20%)"/>
+            android:text="@string/okay_service"/>
     </RadioGroup>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/round_up_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/round_up_tip"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@id/tip_options"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_up_switch"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tip_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_amount"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
