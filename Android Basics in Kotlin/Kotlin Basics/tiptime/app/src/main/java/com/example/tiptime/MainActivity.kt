@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // onClickListner of calculateButton
+        // onClickListener of calculateButton
         binding.calculateButton.setOnClickListener { calculateTip() }
 
     }
@@ -24,7 +24,13 @@ class MainActivity : AppCompatActivity() {
      */
     private fun calculateTip() {
         val stringInTextField = binding.costOfService.text.toString()
-        val cost = stringInTextField.toDouble()
+        val cost = stringInTextField.toDoubleOrNull()
+
+        // if cost is 0 or null, exit from calculateTip() after displaying 0.0 in tip result
+        if (cost == null || cost == 0.0 ){
+            displayTip(0.0)
+            return
+        }
 
         //storing tip percentage acc to selected radioButton in a tipPercentage variable
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
@@ -37,10 +43,17 @@ class MainActivity : AppCompatActivity() {
         var tip = cost * tipPercentage
 
         //rounding up the tip
-        val roundup = binding.roundUpSwitch.isChecked
-        if (roundup) {
+        if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
+
+        displayTip(tip)
+    }
+
+    /*
+    function for displaying test after formatting the tip in currency format
+     */
+    private fun displayTip(tip:Double){
 
         //formatting the tip in currency format
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
@@ -49,6 +62,4 @@ class MainActivity : AppCompatActivity() {
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
 
     }
-
-
 }
