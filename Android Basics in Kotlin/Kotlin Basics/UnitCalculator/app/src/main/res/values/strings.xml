@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Unit Calculator</string>
+    <string name="oz_ml_option"><![CDATA[Ounce -> mL]]></string>
+    <string name="app_caption">Unit Convertor</string>
+    <string name="volume_hint">Volume</string>
+    <string name="options_message">Select Conversion Type</string>
+    <string name="button_caption">Calculate Volume</string>
+    <string name="ml_oz_option"><![CDATA[mL -> Ounce]]></string>
+    <string name="calculated_volume">Result</string>
 </resources>
